@@ -1,0 +1,65 @@
+from fastapi import FastAPI, Query
+import json
+import numpy as np
+import ollama
+from typing import List
+
+app = FastAPI()
+
+# Load characters with embeddings once when the app starts
+with open('characters_with_embeddings.json', 'r') as f:
+    CHARACTERS = json.load(f)
+
+def embed_text(text):
+    """Embed a single text using MixedBread embedding model"""
+    return ollama.embeddings(model='mxbai-embed-large', prompt=text)['embedding']
+
+def manual_cosine_similarity(vec1, vec2):
+    """Calculate cosine similarity manually"""
+    # Convert to numpy arrays to ensure numeric operations
+    vec1 = np.array(vec1)
+    vec2 = np.array(vec2)
+    
+    # Compute dot product
+    dot_product = np.dot(vec1, vec2)
+    
+    # Compute magnitudes
+    magnitude1 = np.linalg.norm(vec1)
+    magnitude2 = np.linalg.norm(vec2)
+    
+    # Avoid division by zero
+    if magnitude1 == 0 or magnitude2 == 0:
+        return 0
+    
+    # Calculate cosine similarity
+    return dot_product / (magnitude1 * magnitude2)
+
+@app.get("/query")
+def query_characters(q: str = Query(..., description="Query string to find similar characters")):
+    # Embed the query
+    query_embedding = embed_text(q)
+    
+    # Compute similarities
+    similarities = []
+    for character in CHARACTERS:
+        # Compute cosine similarity between query and character embedding
+        similarity = manual_cosine_similarity(query_embedding, character['embedding'])
+        
+        # Create a new dict without the embedding
+        character_without_embedding = {k: v for k, v in character.items() if k != 'embedding'}
+        
+        similarities.append({
+            **character_without_embedding,  # Unpack character properties without embedding
+            'similarity': similarity
+        })
+    
+    # Sort characters by similarity in descending order
+    similar_characters = sorted(similarities, key=lambda x: x['similarity'], reverse=True)
+    
+    # Return top 5 most similar characters
+    return similar_characters[:5]
+
+# Optional: Add a health check route
+@app.get("/")
+def health_check():
+    return {"status": "healthy", "message": "Simpsons Character Query API is running"}
