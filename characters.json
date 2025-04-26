@@ -1,0 +1,352 @@
+[
+  {
+    "name": "Homer Simpson",
+    "description": "Lovable bumbling father overweight donut-loving lazy nuclear power plant worker beer enthusiast frequent Moe's patron d'oh catchphrase accident-prone childish funny endearing",
+    "photo": "homerSimpson.webp"
+  },
+  {
+    "name": "Marge Simpson",
+    "description": "Patient motherly tall blue beehive hairstyle caring housewife raspy voice moral compass sensible worried often disapproving nagging supportive grumbling maternal organized",
+    "photo": "margeSimpson.webp"
+  },
+  {
+    "name": "Bart Simpson",
+    "description": "Mischievous rebellious prankster skateboarding troublemaker underachiever spiky-haired yellow detention regular ay caramba catchphrase slingshot wielding chalkboard writing delinquent energetic",
+    "photo": "bartSimpson.webp"
+  },
+  {
+    "name": "Lisa Simpson",
+    "description": "Intelligent vegetarian saxophone-playing environmental activist precocious overachieving straight-A student Buddhist jazz musician liberal philosophical moral social justice warrior academically gifted",
+    "photo": "lisaSimpson.webp"
+  },
+  {
+    "name": "Maggie Simpson",
+    "description": "Silent baby pacifier-sucking toddler blue bow onesie-wearing youngest intelligent observant gun-shooting advanced crawling resourceful red pacifier mysterious quiet deadly accurate",
+    "photo": "maggieSimpson.webp"
+  },
+  {
+    "name": "Mr Burns",
+    "description": "Evil greedy elderly nuclear power tycoon wealthy frail scheming excellent catchphrase bony billionaire malevolent corrupt capitalist tyrannical boss antiquated references sinister",
+    "photo": "mrBurns.webp"
+  },
+  {
+    "name": "Ned Flanders",
+    "description": "Religious neighborly overly cheerful Christian zealot mustached left-handed okily-dokily catchphrase wholesome perfect suburban father devout Bible-loving irritatingly nice helpful",
+    "photo": "nedFlanders.webp"
+  },
+  {
+    "name": "Apu Nahasapeemapetilon",
+    "description": "Hardworking Indian convenience store Kwik-E-Mart owner doctorate computer science eight children workaholic thick accent entrepreneurial overworked polite immigrant vegetarian Hindu",
+    "photo": "apuNahasapeemapetilon.webp"
+  },
+  {
+    "name": "Krusty Clown",
+    "description": "Cynical Jewish chain-smoking depressed television clown entertainer green-haired red-nosed addicted gambling corrupt merchandise-selling washed-up comedian bitter jaded illiterate",
+    "photo": "krustyClown.webp"
+  },
+  {
+    "name": "Milhouse Vanhouten",
+    "description": "Nerdy thick glasses blue-haired best friend constantly bullied naive gullible sensitive allergic everything unrequited crush Lisa hopeless romantic socially awkward",
+    "photo": "milhouseVanhouten.webp"
+  },
+  {
+    "name": "Principal Skinner",
+    "description": "Uptight authoritarian bureaucratic Vietnam veteran mama's boy strict disciplinarian nervous educational administrator spineless repressed military background obsessive-compulsive perfectionist",
+    "photo": "principalSkinner.webp"
+  },
+  {
+    "name": "Chief Wiggum",
+    "description": "Incompetent overweight donut-eating lazy police chief bumbling corrupt inept law enforcement naive stupid oblivious clueless negligent ineffective gluttonous authority figure",
+    "photo": "chiefWiggum.webp"
+  },
+  {
+    "name": "Moe Szyslak",
+    "description": "Depressed suicidal bartender ugly lonely bar owner grumpy angry violent prank phone victim miserable desperate loveless cynical pessimistic criminal activities",
+    "photo": "moeSzyslak.webp"
+  },
+  {
+    "name": "Ralph Wiggum",
+    "description": "Dim-witted innocent childlike special education student chief's son nonsensical statements paste-eating unpredictable sweet clueless bizarre observations socially oblivious endearing",
+    "photo": "ralphWiggum.webp"
+  },
+  {
+    "name": "Groundskeeper Willie",
+    "description": "Scottish aggressive muscular angry school janitor violent red-haired bearded shirtless kilt-wearing hot-tempered nationalistic maintenance worker rugged strong accent",
+    "photo": "groundskeeperWillie.webp"
+  },
+  {
+    "name": "Mr Smithers",
+    "description": "Devoted assistant loyal gay closeted subservient Burns' right-hand man competent organized professional unrequited love dedicated sycophantic bow-tie wearing glasses",
+    "photo": "mrSmithers.webp"
+  },
+  {
+    "name": "Patty Bouvier",
+    "description": "Chain-smoking cynical DMV worker lesbian sarcastic twin sister Marge's sibling Homer-hating MacGyver fanatic deep voice single bitter feminist gruff",
+    "photo": "pattyBouvier.webp"
+  },
+  {
+    "name": "Selma Bouvier",
+    "description": "Chain-smoking cynical DMV worker multiple marriages desperate twin sister Marge's sibling Homer-hating deep voice single bitter romantic failures raspy",
+    "photo": "selmaBouvier.webp"
+  },
+  {
+    "name": "Abe Simpson",
+    "description": "Senile elderly rambling grandfather storyteller forgetful confused retirement home resident World War II veteran cranky outdated references long-winded yarns incoherent",
+    "photo": "abeSimpson.webp"
+  },
+  {
+    "name": "Nelson Muntz",
+    "description": "School bully haw-haw laugh poor violent threatening insecure abusive father issues aggressive intimidating vest-wearing troubled home life secretly sensitive",
+    "photo": "nelsonMuntz.webp"
+  },
+  {
+    "name": "Sideshow Bob",
+    "description": "Criminal mastermind murderous intellectual cultured opera-loving palm tree hairstyle revenge-seeking Bart's nemesis Yale educated theatrical sophisticated eloquent villain",
+    "photo": "sideshowBob.webp"
+  },
+  {
+    "name": "Comicbook Guy",
+    "description": "Obese sarcastic comic store owner nerdy worst-ever catchphrase overweight condescending collector virginal pedantic know-it-all pop culture expert socially inept",
+    "photo": "comicbookGuy.webp"
+  },
+  {
+    "name": "Kent Brockman",
+    "description": "Arrogant news anchor narcissistic sensationalist broadcaster pompous dramatic wealthy blow-dried hair silver fox media personality self-important ratings-focused journalist",
+    "photo": "kentBrockman.webp"
+  },
+  {
+    "name": "Mayor Quimby",
+    "description": "Corrupt womanizing politician Kennedy-esque Boston accent sleazy dishonest adulterous scandal-prone bribe-taking incompetent nepotistic vote-buying unethical charismatic",
+    "photo": "mayorQuimby.webp"
+  },
+  {
+    "name": "Martin Prince",
+    "description": "Genius overachieving nerdy teacher's pet brainy bullied perfectionist know-it-all academic prodigy socially awkward unpopular scholarly studious effeminate",
+    "photo": "martinPrince.webp"
+  },
+  {
+    "name": "Mrs Krabappel",
+    "description": "Cynical divorced teacher chain-smoking bitter sarcastic lonely single middle-aged educational burnout desperate romantic jaded classroom authority figure disillusioned",
+    "photo": "mrsKrabappel.webp"
+  },
+  {
+    "name": "Otto Mann",
+    "description": "Stoned hippie school bus driver heavy metal music lover long-haired slacker drug user irresponsible laid-back carefree guitar-playing burnout perpetually high",
+    "photo": "ottoMann.webp"
+  },
+  {
+    "name": "Professor Frink",
+    "description": "Nerdy scientist inventor absent-minded genius thick glasses socially awkward Jerry Lewis voice nonsensical gibberish inventive brilliant eccentric technological mastermind",
+    "photo": "professorFrink.webp"
+  },
+  {
+    "name": "Dr Hibbert",
+    "description": "Jovial African-American doctor constant chuckling inappropriate laughter expensive medical professional caring competent family man wealthy healthcare provider ethical physician",
+    "photo": "drHibbert.webp"
+  },
+  {
+    "name": "Snake Jailbird",
+    "description": "Criminal thief recidivist cool dude catchphrase leather jacket wearing long-haired felon carjacker repeated offender streetwise tattoos petty crime specialist",
+    "photo": "snakeJailbird.webp"
+  },
+  {
+    "name": "Lenny Leonard",
+    "description": "Simple-minded power plant worker Homer's friend blue-collar union member easily injured master's degree loyal best friends Carl naive accident-prone",
+    "photo": "lennyLeonard.webp"
+  },
+  {
+    "name": "Carl Carlson",
+    "description": "Intelligent power plant worker Homer's friend African-American blue-collar Iceland enthusiast sophisticated best friends Lenny cultured well-traveled responsible",
+    "photo": "carlCarlson.webp"
+  },
+  {
+    "name": "Troy McClure",
+    "description": "Washed-up B-movie celebrity infomercial host has-been actor educational film narrator sleazy desperate comeback-seeking movie references questionable past career",
+    "photo": "troyMcclure.webp"
+  },
+  {
+    "name": "Duffman Beer",
+    "description": "Party-loving beer mascot muscular corporate spokesman oh-yeah catchphrase promotional character energetic marketing superhero costume advertising overly enthusiastic spokesman",
+    "photo": "duffmanBeer.webp"
+  },
+  {
+    "name": "Reverend Lovejoy",
+    "description": "Bored apathetic minister religious leader train enthusiast indifferent pastor monotone voice crisis of faith frustrated clergyman administrative burnout spiritual guidance",
+    "photo": "reverendLovejoy.webp"
+  },
+  {
+    "name": "Drnick Riviera",
+    "description": "Incompetent quack doctor malpractice surgeon unethical cheap medical professional dangerous treatments discount healthcare hi-everybody catchphrase unlicensed fraudulent physician",
+    "photo": "drnickRiviera.webp"
+  },
+  {
+    "name": "Hans Moleman",
+    "description": "Extremely elderly short mole-like unfortunate accident-prone pathetic unlucky disaster magnet constantly dying recurring injuries pitiful vulnerable immortal seemingly",
+    "photo": "hansMoleman.webp"
+  },
+  {
+    "name": "Sherri Terri",
+    "description": "Purple-haired identical twins elementary students mean girls synchronized speaking mischievous troublemakers bullying behavior coordinated actions matching outfits creepy unison",
+    "photo": "sherriTerri.webp"
+  },
+  {
+    "name": "Jimbo Jones",
+    "description": "Teenage bully skull t-shirt wearing delinquent troublemaker gang leader shoplifter vandal criminal activities intimidating aggressive Nelson's friend tough guy",
+    "photo": "jimboJones.webp"
+  },
+  {
+    "name": "Kearney Zzyzwicz",
+    "description": "Elementary bully secretly adult divorced father balding older student tough intimidating mysterious age discrepancy violent aggressive deceptive appearance mature",
+    "photo": "kearneyZzyzwicz.webp"
+  },
+  {
+    "name": "Dolph Starbeam",
+    "description": "Jewish bully gang member smallest toughest Jimbo's friend delinquent troublemaker elementary student intimidating aggressive criminal activities Hebrew speaking violent",
+    "photo": "dolphStarbeam.webp"
+  },
+  {
+    "name": "Jasper Beardly",
+    "description": "Elderly bearded paddlin' obsessed retirement home resident Abe's friend senile confused old-fashioned outdated references grandfather figure decrepit forgetful nostalgic",
+    "photo": "jasperBeardly.webp"
+  },
+  {
+    "name": "Mrs Hoover",
+    "description": "Depressed teacher Lisa's instructor Lyme disease sufferer mentally exhausted unenthusiastic educator burnt-out classroom authority figure illness-prone disengaged overwhelmed",
+    "photo": "mrsHoover.webp"
+  },
+  {
+    "name": "Agnes Skinner",
+    "description": "Domineering mother controlling elderly abusive Seymour's parent critical demanding manipulative guilt-tripping overbearing harsh disapproving judgmental authoritarian matriarch",
+    "photo": "agnesSkinner.webp"
+  },
+  {
+    "name": "Fat Tony",
+    "description": "Mafia boss organized crime leader Italian mobster sophisticated criminal intimidating powerful dangerous illegal business operations ruthless gangster legitimate businessman front",
+    "photo": "fatTony.webp"
+  },
+  {
+    "name": "Lindsey Naegle",
+    "description": "Corporate executive businesswoman career-focused professional versatile occupations marketing consultant ambitious career woman television producer adaptable roles corporate climber",
+    "photo": "lindseyNaegle.webp"
+  },
+  {
+    "name": "Luann Vanhouten",
+    "description": "Divorced mother eyebrow-less Milhouse's mom artistic single parent dating bodybuilder remarried previously struggling financially empowered independent protective maternal",
+    "photo": "luannVanhouten.webp"
+  },
+  {
+    "name": "Kirk Vanhouten",
+    "description": "Divorced father unemployed pathetic Milhouse's dad failed marriage cracker factory worker can-I-borrow-a-feeling desperate lonely struggling defeated emasculated",
+    "photo": "kirkVanhouten.webp"
+  },
+  {
+    "name": "Cletus Spuckler",
+    "description": "Hillbilly yokel stereotypical redneck slack-jawed uneducated multiple children rural farmer inbred ignorant illiterate poor white trash simpleton backwoods country",
+    "photo": "cletusSpuckler.webp"
+  },
+  {
+    "name": "Brandine Spuckler",
+    "description": "Hillbilly wife mother multiple children sister-wife rural uneducated inbred ignorant illiterate poor white trash country bumpkin backwoods redneck stereotype",
+    "photo": "brandineSpuckler.webp"
+  },
+  {
+    "name": "Disco Stu",
+    "description": "Disco-obsessed nostalgic seventies enthusiast afro-wearing outdated fashion rhinestone suit platform shoes dance moves stuck-in-time groovy catchphrases party animal",
+    "photo": "discoStu.webp"
+  },
+  {
+    "name": "Squeakyvoiced Teen",
+    "description": "Pubescent worker pimply multiple jobs teenage employee high-pitched voice awkward customer service fast food retail various occupations inexperienced acne-prone",
+    "photo": "squeakyvoicedTeen.webp"
+  },
+  {
+    "name": "Helen Lovejoy",
+    "description": "Gossipy minister's wife think-of-the-children catchphrase moral panic judgemental nosy busybody holier-than-thou church lady sanctimonious pearl-clutching concerned parent",
+    "photo": "helenLovejoy.webp"
+  },
+  {
+    "name": "Itchy Cartoon",
+    "description": "Violent mouse cartoon character murderous psychopathic weapon-wielding cat killer sadistic animated blue rodent television show star malicious brutal",
+    "photo": "itchyCartoon.webp"
+  },
+  {
+    "name": "Scratchy Cartoon",
+    "description": "Victimized cat cartoon character constantly murdered suffering animated violence recipient tortured mutilated decapitated television show character eternal victim",
+    "photo": "scratchyCartoon.webp"
+  },
+  {
+    "name": "Lurleen Lumpkin",
+    "description": "Country singer waitress talented songwriter Southern accent romantic interest Homer temptress musical performer struggling artist trailer park resident blonde",
+    "photo": "lurleenLumpkin.webp"
+  },
+  {
+    "name": "Cookie Kwan",
+    "description": "Aggressive realtor territorial west-side saleswoman competitive Asian-American real estate agent ruthless business professional confrontational property seller ambitious fierce",
+    "photo": "cookieKwan.webp"
+  },
+  {
+    "name": "Rainier Wolfcastle",
+    "description": "Austrian action star Schwarzenegger parody muscular actor McBain character foreign accent bodybuilder celebrity movie star wealthy Hollywood tough guy",
+    "photo": "rainierWolfcastle.webp"
+  },
+  {
+    "name": "Artie Ziff",
+    "description": "Rich nerd software millionaire Marge's prom date obsessive creepy internet entrepreneur tech mogul unrequited love wealthy inappropriate touchy stalker",
+    "photo": "artieZiff.webp"
+  },
+  {
+    "name": "Bleedinggums Murphy",
+    "description": "Jazz musician saxophone player mentor Lisa blues legend African-American deceased talented musical genius soulful performer wise teacher inspirational",
+    "photo": "bleedinggumsMurphy.webp"
+  },
+  {
+    "name": "Lionel Hutz",
+    "description": "Incompetent lawyer ambulance chaser sleazy attorney unethical legal practice shady businessman multiple careers desperate fraudulent law professional unprofessional",
+    "photo": "lionelHutz.webp"
+  },
+  {
+    "name": "Gil Gunderson",
+    "description": "Desperate salesman unlucky unemployed constantly fired pathetic struggling multiple jobs failure dejected pessimistic down-on-luck hopeless loser unfortunate",
+    "photo": "gilGunderson.webp"
+  },
+  {
+    "name": "Manjula Nahasapeemapetilon",
+    "description": "Indian wife mother octuplets Apu's spouse arranged marriage overwhelmed parent traditional homemaker stressed caregiver multiple children exhausted nurturing",
+    "photo": "manjulaNahasapeemapetilon.webp"
+  },
+  {
+    "name": "Uter Zorker",
+    "description": "German exchange student overweight chocolate-loving foreign accent lederhosen-wearing candy enthusiast stereotypical European plump pastry-obsessed gluttonous food-focused",
+    "photo": "uterZorker.webp"
+  },
+  {
+    "name": "Dewey Largo",
+    "description": "Music teacher frustrated conductor band instructor artistic temperamental Lisa's mentor stressed educator passionate musician disciplinarian creative perfectionist pompous",
+    "photo": "deweyLargo.webp"
+  },
+  {
+    "name": "Kang Kodos",
+    "description": "Space aliens tentacled creatures Rigellian invaders one-eyed extraterrestrial conquerors Halloween specials green monsters intergalactic beings world domination plans",
+    "photo": "kangKodos.webp"
+  },
+  {
+    "name": "Jebediah Springfield",
+    "description": "Town founder historical figure statue bronze monument legendary pioneer settler bearded frontiersman silver-tongued myth heroic symbol controversial past",
+    "photo": "jebediahSpringfield.webp"
+  },
+  {
+    "name": "Rod Flanders",
+    "description": "Religious child Ned's oldest son well-behaved Christian zealot sheltered homeschooled innocent obedient proper conservative upbringing moral pure naive",
+    "photo": "rodFlanders.webp"
+  },
+  {
+    "name": "Todd Flanders",
+    "description": "Religious child Ned's youngest son well-behaved Christian zealot sheltered homeschooled innocent obedient proper conservative upbringing moral pure naive",
+    "photo": "toddFlanders.webp"
+  },
+  {
+    "name": "Jessica Lovejoy",
+    "description": "Rebellious preacher's daughter manipulative troublemaker bad influence Bart's crush delinquent mischievous deceptive angelic appearance secretly evil troubled youth",
+    "photo": "jessicaLovejoy.webp"
+  }
+]
