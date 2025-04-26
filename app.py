@@ -2,9 +2,18 @@ from fastapi import FastAPI, Query
 import json
 import numpy as np
 import ollama
-from typing import List
-
+from typing import List 
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # your React dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Load characters with embeddings once when the app starts
 with open('characters_with_embeddings.json', 'r') as f:

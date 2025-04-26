@@ -13,14 +13,13 @@
 
 
 ## backend
-- [ ] fastAPI set up
-    - [ ] /test
-	- [ ] /query 
+- [x] fastAPI set up
+	- [x] /query 
 
 
 ## frontend
-- [ ] init basic frontend & return text
-- [ ] add images
+- [x] init basic frontend & return text
+- [x] add images
 - [ ] tSNE! 
     - [ ] as script
     - [ ] display it
@@ -38,3 +37,4 @@
 # notes
 https://ollama.com/library/mxbai-embed-large
 
+curl "http://localhost:8000/query?q=old%20man"
