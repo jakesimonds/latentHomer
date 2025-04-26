@@ -1,0 +1,47 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+.env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.swp
+*~
+
+# Ollama model cache (if applicable)
+.ollama/
+
+# Embedding and large data files
+*.json
+!characters.json
+!characters_with_embeddings.json
