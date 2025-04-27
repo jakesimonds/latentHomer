@@ -41,7 +41,3 @@ build/
 # Ollama model cache (if applicable)
 .ollama/
 
-# Embedding and large data files
-*.json
-!characters.json
-!characters_with_embeddings.json
