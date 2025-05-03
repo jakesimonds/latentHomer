@@ -1,25 +1,70 @@
-import React, { useState } from 'react';
-import { Input, Button, Card, Typography } from 'antd';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { Select, Button, Card, Typography } from 'antd';
 import Plot from 'react-plotly.js';
 import 'antd/dist/reset.css';
 import './App.css';
 
 const { Title, Text } = Typography;
 
+// Cosine similarity function in JS
+function cosineSimilarity(vecA, vecB) {
+  const dot = vecA.reduce((sum, a, i) => sum + a * vecB[i], 0);
+  const magA = Math.sqrt(vecA.reduce((sum, a) => sum + a * a, 0));
+  const magB = Math.sqrt(vecB.reduce((sum, b) => sum + b * b, 0));
+  if (magA === 0 || magB === 0) return 0;
+  return dot / (magA * magB);
+}
+
 function App() {
   const [query, setQuery] = useState('');
+  const [queries, setQueries] = useState([]);
   const [characters, setCharacters] = useState([]);
   const [tsneData, setTsneData] = useState(null);
+  const [tsnePrecomputed, setTsnePrecomputed] = useState({});
+  const [charactersWithEmbeddings, setCharactersWithEmbeddings] = useState([]);
+  const [queriesWithEmbeddings, setQueriesWithEmbeddings] = useState([]);
 
-  const handleSearch = async () => {
-    try {
-      const charResponse = await axios.get(`http://localhost:8000/query?q=${encodeURIComponent(query)}`);
-      setCharacters(charResponse.data);
-      const tsneResponse = await axios.get(`http://localhost:8000/tsne-data?q=${encodeURIComponent(query)}`);
-      setTsneData(tsneResponse.data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
+  // Load all static data on mount
+  useEffect(() => {
+    fetch('/queries.json')
+      .then(res => res.json())
+      .then(data => {
+        setQueriesWithEmbeddings(data);
+        setQueries(data.map(q => q.query));
+        if (data.length > 0) setQuery(data[0].query);
+      });
+
+    fetch('/characters_with_embeddings.json')
+      .then(res => res.json())
+      .then(setCharactersWithEmbeddings);
+
+    fetch('/tsne_precomputed.json')
+      .then(res => res.json())
+      .then(setTsnePrecomputed);
+  }, []);
+
+  const handleSearch = () => {
+    if (!query) return;
+    // Find the embedding for the selected query
+    const queryObj = queriesWithEmbeddings.find(q => q.query === query);
+    if (!queryObj) return;
+
+    // Compute cosine similarity for all characters
+    const similarities = charactersWithEmbeddings.map(character => {
+      const similarity = cosineSimilarity(queryObj.embedding, character.embedding);
+      const { embedding, ...characterWithoutEmbedding } = character;
+      return { ...characterWithoutEmbedding, similarity };
+    });
+
+    // Sort and take top 5
+    const top5 = similarities.sort((a, b) => b.similarity - a.similarity).slice(0, 5);
+    setCharacters(top5);
+
+    // Use precomputed t-SNE data
+    if (tsnePrecomputed[query]) {
+      setTsneData(tsnePrecomputed[query]);
+    } else {
+      setTsneData(null);
     }
   };
 
@@ -29,19 +74,20 @@ function App() {
         Simpsons Character Search
       </Title>
       <div className="main-flex-container">
-        {/* Left: Plot and search */}
         <div style={{ flex: 3, minWidth: 0 }}>
           <div style={{ display: 'flex', marginBottom: 20 }}>
-            <Input
-              placeholder="Search for Simpsons characters"
+            <Select
+              style={{ minWidth: 250, marginRight: 10 }}
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              style={{ marginRight: 10 }}
+              onChange={setQuery}
+              options={queries.map(q => ({ value: q, label: q }))}
+              placeholder="Select a query"
             />
             <Button type="primary" onClick={handleSearch}>
               Search
             </Button>
           </div>
+          {/* t-SNE Plot */}
           {tsneData && (
             <div>
               <Title level={4}>t-SNE Visualization</Title>
@@ -73,18 +119,20 @@ function App() {
                 ]}
                 layout={{
                   autosize: true,
-                  title: 't-SNE of Simpsons Character Embeddings',
-                  showlegend: true,
-                  margin: { l: 40, r: 40, t: 40, b: 40 },
+                  height: 500,
                   legend: {
                     orientation: 'h',
                     y: -0.2,
                     x: 0.5,
                     xanchor: 'center'
-                  }
+                  },
+                  margin: { l: 40, r: 20, t: 40, b: 40 },
+                  title: 't-SNE of Simpsons Character Embeddings',
+                  showlegend: true,
                 }}
                 useResizeHandler={true}
-                style={{ width: '100%', height: '80vh', minHeight: 500 }}
+                style={{ width: '100%', minWidth: 0 }}
+                config={{ responsive: true }}
               />
             </div>
           )}
