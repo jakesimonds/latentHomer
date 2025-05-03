@@ -93,6 +93,7 @@ function App() {
                 x: tsneData.points.map(p => p[0]),
                 y: tsneData.points.map(p => p[1]),
                 text: tsneData.names,
+                hovertext: tsneData.descriptions,
                 mode: 'markers+text',
                 type: 'scatter',
                 name: 'Characters',

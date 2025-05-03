@@ -76,6 +76,15 @@ def tsne_data(q: str = Query(..., description="Query string for t-SNE visualizat
     with open('characters_with_embeddings.json', 'r') as f:
         characters = json.load(f)
     names = [char['name'] for char in characters]
+    
+    def format_description(desc, words_per_line=5):
+        words = desc.split()
+        lines = [' '.join(words[i:i+words_per_line]) for i in range(0, len(words), words_per_line)]
+        return '<br>'.join(lines)
+
+    descriptions = [format_description(char['description']) for char in characters]
+    
+    #descriptions = [char['description'] for char in characters]
     embeddings = np.array([char['embedding'] for char in characters])
 
     # Embed the query
@@ -97,6 +106,7 @@ def tsne_data(q: str = Query(..., description="Query string for t-SNE visualizat
     return {
         "points": points,
         "names": names,
+        "descriptions": descriptions,
         "query_point": query_point,
         "query_label": q
     }
