@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Button, Card, Row, Col, Typography } from 'antd';
 import axios from 'axios';
+import Plot from 'react-plotly.js';
 import 'antd/dist/reset.css';
 
 const { Title, Text } = Typography;
@@ -8,13 +9,19 @@ const { Title, Text } = Typography;
 function App() {
   const [query, setQuery] = useState('');
   const [characters, setCharacters] = useState([]);
+  const [tsneData, setTsneData] = useState(null);
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/query?q=${encodeURIComponent(query)}`);
-      setCharacters(response.data);
+      // Fetch top 5 characters
+      const charResponse = await axios.get(`http://localhost:8000/query?q=${encodeURIComponent(query)}`);
+      setCharacters(charResponse.data);
+
+      // Fetch t-SNE data
+      const tsneResponse = await axios.get(`http://localhost:8000/tsne-data?q=${encodeURIComponent(query)}`);
+      setTsneData(tsneResponse.data);
     } catch (error) {
-      console.error('Error fetching characters:', error);
+      console.error('Error fetching data:', error);
     }
   };
 
@@ -75,6 +82,45 @@ function App() {
           </Col>
         ))}
       </Row>
+
+      {/* t-SNE Plot */}
+      {tsneData && (
+        <div style={{ marginTop: 40 }}>
+          <Title level={4}>t-SNE Visualization</Title>
+          <Plot
+            data={[
+              {
+                x: tsneData.points.map(p => p[0]),
+                y: tsneData.points.map(p => p[1]),
+                text: tsneData.names,
+                mode: 'markers+text',
+                type: 'scatter',
+                name: 'Characters',
+                marker: { color: 'blue', size: 10 },
+                textposition: 'top center',
+                hoverinfo: 'text'
+              },
+              {
+                x: [tsneData.query_point[0]],
+                y: [tsneData.query_point[1]],
+                text: [tsneData.query_label],
+                mode: 'markers+text',
+                type: 'scatter',
+                name: 'Query',
+                marker: { color: 'red', size: 20, symbol: 'star' },
+                textposition: 'top center',
+                hoverinfo: 'text'
+              }
+            ]}
+            layout={{
+              width: 700,
+              height: 500,
+              title: 't-SNE of Simpsons Character Embeddings',
+              showlegend: true
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 }

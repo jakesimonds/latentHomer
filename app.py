@@ -4,6 +4,8 @@ import numpy as np
 import ollama
 from typing import List 
 from fastapi.middleware.cors import CORSMiddleware
+from sklearn.manifold import TSNE
+
 app = FastAPI()
 
 app.add_middleware(
@@ -67,6 +69,37 @@ def query_characters(q: str = Query(..., description="Query string to find simil
     
     # Return top 5 most similar characters
     return similar_characters[:5]
+
+@app.get("/tsne-data")
+def tsne_data(q: str = Query(..., description="Query string for t-SNE visualization")):
+    # Load characters and embeddings
+    with open('characters_with_embeddings.json', 'r') as f:
+        characters = json.load(f)
+    names = [char['name'] for char in characters]
+    embeddings = np.array([char['embedding'] for char in characters])
+
+    # Embed the query
+    def embed_text(text):
+        return ollama.embeddings(model='mxbai-embed-large', prompt=text)['embedding']
+    query_embedding = np.array(embed_text(q))
+
+    # Stack the query embedding with the original embeddings
+    all_embeddings = np.vstack([embeddings, query_embedding])
+
+    # Run t-SNE
+    tsne = TSNE(n_components=2, random_state=42)
+    all_embeddings_2d = tsne.fit_transform(all_embeddings)
+
+    # Split out the results
+    points = all_embeddings_2d[:-1].tolist()      # All character points
+    query_point = all_embeddings_2d[-1].tolist()  # Query point
+
+    return {
+        "points": points,
+        "names": names,
+        "query_point": query_point,
+        "query_label": q
+    }
 
 # Optional: Add a health check route
 @app.get("/")
