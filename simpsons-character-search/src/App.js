@@ -3,6 +3,7 @@ import { Input, Button, Card, Typography } from 'antd';
 import axios from 'axios';
 import Plot from 'react-plotly.js';
 import 'antd/dist/reset.css';
+import './App.css';
 
 const { Title, Text } = Typography;
 
@@ -27,17 +28,7 @@ function App() {
       <Title level={2} style={{ textAlign: 'center', margin: 0, padding: 20 }}>
         Simpsons Character Search
       </Title>
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        width: '100%',
-        maxWidth: '1800px',
-        margin: '0 auto',
-        gap: 24,
-        padding: 24
-      }}>
+      <div className="main-flex-container">
         {/* Left: Plot and search */}
         <div style={{ flex: 3, minWidth: 0 }}>
           <div style={{ display: 'flex', marginBottom: 20 }}>
@@ -84,7 +75,13 @@ function App() {
                   autosize: true,
                   title: 't-SNE of Simpsons Character Embeddings',
                   showlegend: true,
-                  margin: { l: 40, r: 40, t: 40, b: 40 }
+                  margin: { l: 40, r: 40, t: 40, b: 40 },
+                  legend: {
+                    orientation: 'h',
+                    y: -0.2,
+                    x: 0.5,
+                    xanchor: 'center'
+                  }
                 }}
                 useResizeHandler={true}
                 style={{ width: '100%', height: '80vh', minHeight: 500 }}
@@ -101,21 +98,42 @@ function App() {
           minWidth: 320,
           maxWidth: 400
         }}>
-          {characters.map((character) => (
+          {characters.map((character, idx) => (
             <Card
               key={character.name}
               hoverable
+              style={{ position: 'relative', marginBottom: 16 }}
               cover={
                 <img
                   alt={character.name}
                   src={`/photos/${character.photo}`}
                   style={{
                     height: 180,
-                    objectFit: 'cover'
+                    width: '100%',
+                    objectFit: 'contain',
+                    background: '#fff',
+                    display: 'block',
+                    margin: '0 auto'
                   }}
                 />
               }
             >
+              {/* Badge in the top left */}
+              <div style={{
+                position: 'absolute',
+                top: 8,
+                left: 8,
+                background: '#1890ff',
+                color: '#fff',
+                borderRadius: 6,
+                padding: '2px 10px',
+                fontWeight: 'bold',
+                fontSize: 14,
+                zIndex: 2
+              }}>
+                {idx + 1}
+                {idx === 0 ? 'st' : idx === 1 ? 'nd' : idx === 2 ? 'rd' : 'th'} most similar
+              </div>
               <Card.Meta
                 title={character.name}
                 description={
